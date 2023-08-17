@@ -5,7 +5,8 @@
   "main": "index.cjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.cjs"
+    "start": "nodemon index.cjs",
+    "build": "npm i"
   },
   "keywords": [],
   "author": "",
