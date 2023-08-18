@@ -20,11 +20,12 @@ const connectDB = async () => {
 };
 connectDB();
 app.use(cors({
-  origin: ['http://localhost:8080'],
+  origin: [''],
   methods: ["POST", "GET","PUT", "DELETE"],
   credentials : true,
 }))
 }))
+app.get('/', (req, res) => console.log("Hello"))
 app.use(bodyParser.json())
 
 app.use('/', router)
