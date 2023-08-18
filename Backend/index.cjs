@@ -20,7 +20,7 @@ const connectDB = async () => {
 };
 connectDB();
 app.use(cors({
-  origin: [''],
+  origin: ['https://to-do-app-api-one.vercel.app'],
   methods: ["POST", "GET","PUT", "DELETE"],
   credentials : true,
 }))
