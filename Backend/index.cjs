@@ -20,11 +20,13 @@ const connectDB = async () => {
 connectDB();
 
 app.use(cors());
-const corsOptions = {
-  origin: "*",
-  credentials: true, //access-control-allow-credentials:true
-};
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "*",
+    methods: ["post", "Get", "Put", "Delete"],
+    credentials: true,
+  })
+);
 
 app.get("/", (req, res) => console.log("Hello"));
 app.use(bodyParser.json());
