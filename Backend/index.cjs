@@ -19,15 +19,10 @@ const connectDB = async () => {
 };
 connectDB();
 
-app.use(cors())
-// app.use(cors(){
-//   origin: ["https://to-do-app-api-beta.vercel.app/"],
-//   methods: ["POST", "GET", "PUT", "DELETE"],
-//   credentials: true,
-// })
-app.get('/', (req, res) => console.log("Hello"))
-app.use(bodyParser.json())
+app.use(cors());
 
+app.get("/", (req, res) => console.log("Hello"));
+app.use(bodyParser.json());
 
 app.use(bodyParser.json());
 
