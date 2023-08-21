@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.cjs",
   "scripts": {
-    "dev": "nodemon index.cjs",
-    "build": "npm i"
+    "start": "node index.cjs"
   },
   "keywords": [],
   "author": "",

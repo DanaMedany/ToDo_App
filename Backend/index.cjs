@@ -1,14 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const router = require("./Routes/routeTodo.cjs")
-const bodyParser = require("body-parser")
-var cors = require('cors')
-
+const router = require("./Routes/routeTodo.cjs");
+const bodyParser = require("body-parser");
+var cors = require("cors");
 
 const app = express();
 
-
-const mongoUrl = "mongodb+srv://DanaMedany:Dana123@todolist.4zu0x7o.mongodb.net/TodoList"
+const mongoUrl =
+  "mongodb+srv://DanaMedany:Dana123@todolist.4zu0x7o.mongodb.net/TodoList";
 const connectDB = async () => {
   try {
     await mongoose.connect(mongoUrl);
@@ -19,14 +18,9 @@ const connectDB = async () => {
   }
 };
 connectDB();
-app.use(cors({
-  origin: ['http://localhost:8080'],
-  methods: ["POST", "GET","PUT", "DELETE"],
-  credentials : true,
-}))
-}))
-app.use(bodyParser.json())
 
-app.use('/', router)
+app.use(bodyParser.json());
+
+app.use("/", router);
 
 app.listen("5000");
