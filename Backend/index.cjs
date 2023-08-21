@@ -20,11 +20,11 @@ const connectDB = async () => {
 connectDB();
 
 app.use(cors());
-const corsOptions ={
-  origin:'https://heroic-dodol-81d3fc.netlify.app', 
-  credentials:true,            //access-control-allow-credentials:true
-  optionSuccessStatus:200
-}
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
 app.use(cors(corsOptions));
 
 app.get("/", (req, res) => console.log("Hello"));
