@@ -4,14 +4,16 @@ import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
 
 function ToDo(props) {
-  
   const updateItem = () => {
     let updatedText = prompt("Enter the updated text:", props.dataItem.text);
     if (updatedText !== null) {
       axios
-        .put(`http://localhost:5000/todo/update/${props.dataItem._id} `, {
-          text: updatedText,
-        })
+        .put(
+          `https://todo-app-api-qkpj.onrender.com/todo/update/${props.dataItem._id} `,
+          {
+            text: updatedText,
+          }
+        )
         .then((res) => {
           console.log(res.data);
           props.showData(props.messageTodo);
@@ -24,7 +26,9 @@ function ToDo(props) {
 
   const deleteItem = () => {
     axios
-      .delete(`http://localhost:5000/todo/delete/${props.dataItem._id}`)
+      .delete(
+        `https://todo-app-api-qkpj.onrender.com/todo/delete/${props.dataItem._id}`
+      )
       .then((res) => {
         console.log(res);
         props.showData(props.messageTodo);

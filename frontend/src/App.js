@@ -13,7 +13,7 @@ function App() {
 
   const showList = () => {
     axios
-      .get("http://localhost:5000/todo/show")
+      .get("https://todo-app-api-qkpj.onrender.com/todo/show") 
       .then((res) => {
         setTodo(res.data.todo);
       })
@@ -24,7 +24,7 @@ function App() {
 
   const handleClick = () => {
     axios
-      .post("http://localhost:5000/todo/create", { text })
+      .post("https://todo-app-api-qkpj.onrender.com/todo/create", { text })
       .then((res) => {
         // console.log(res);
         setText("");
