@@ -20,13 +20,20 @@ const connectDB = async () => {
 connectDB();
 
 app.use(cors());
-app.use(
-  cors({
-    origin: "*",
-    methods: ["post", "Get", "Put", "Delete"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "*",
+//     methods: ["post", "Get", "Put", "Delete"],
+//     credentials: true,
+//   })
+// );
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 
 app.get("/", (req, res) => console.log("Hello"));
 app.use(bodyParser.json());
