@@ -1,4 +1,4 @@
-const controller = require("../Controllers/todoController.cjs");
+const controller = require("../Controllers/todoController.js");
 const { Router } = require("express");
 const router = Router();
 var cors = require("cors");

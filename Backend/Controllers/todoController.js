@@ -1,4 +1,4 @@
-const todoModel = require("../model/todoSchema.cjs");
+const todoModel = require("../model/todoSchema.js");
 
 exports.showToDo = async (req, res) => {
   try {
