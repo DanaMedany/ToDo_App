@@ -20,6 +20,7 @@ const connectDB = async () => {
 connectDB();
 
 app.use(cors());
+app.use(bodyParser.json());
 // app.use(
 //   cors({
 //     origin: "*",
@@ -36,9 +37,6 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => console.log("Hello"));
-app.use(bodyParser.json());
-
-app.use(bodyParser.json());
 
 app.use("/", router);
 
